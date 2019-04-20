@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Implementation-Version: 1.0-SNAPSHOT
+Built-By: 尹训岭
+Implementation-Vendor-Id: com.graduationdesign
+Created-By: IntelliJ IDEA
+Build-Jdk: 1.8.0_171
+Main-Class: com.gd.AppAplication
+
