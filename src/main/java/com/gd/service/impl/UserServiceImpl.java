@@ -17,4 +17,23 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserService {
 
+    @Override
+    public void getUserList() {
+
+    }
+
+    @Override
+    public void getUserLoveList() {
+
+    }
+
+    @Override
+    public void insertUserGuessL() {
+
+    }
+
+    @Override
+    public void updateUserGuessL() {
+
+    }
 }
