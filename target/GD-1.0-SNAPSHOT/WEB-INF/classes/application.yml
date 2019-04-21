@@ -1,8 +1,0 @@
-server:
-  port: 8085
-  servlet:
-    context-path: /api
-  tomcat:
-    max-threads: 100
-spring:
-  profiles: dev
