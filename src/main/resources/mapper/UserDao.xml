@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gd.inst.dao.UserDao">
+<mapper namespace="com.gd.dao.UserDao">
 
     <!-- 通用查询映射结果 -->
     <resultMap id="BaseResultMap" type="com.gd.model.User">
@@ -15,5 +15,11 @@
     <sql id="Base_Column_List">
         id, username, password, create_time, update_time
     </sql>
+
+    <select id="queryUserList" resultMap="BaseResultMap" >
+        select * from user ;
+    </select>
+
+
 
 </mapper>

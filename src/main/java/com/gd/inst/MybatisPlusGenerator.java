@@ -1,3 +1,4 @@
+/*
 package com.gd.inst;
 
 import com.baomidou.mybatisplus.annotation.DbType;
@@ -49,10 +50,12 @@ public class MybatisPlusGenerator {
                 .entityTableFieldAnnotationEnable(true)
                 .setTablePrefix("t_")
                 .setNaming(NamingStrategy.underline_to_camel)
-              /*  .setSuperEntityClass("com.yao.spu.service.core.model.BaseModel")
+              */
+/*  .setSuperEntityClass("com.yao.spu.service.core.model.BaseModel")
                 .setSuperMapperClass("com.yao.spu.service.core.dao.BaseDao")
                 .setSuperServiceClass("com.yao.spu.service.core.service.BaseService")
-                .setSuperServiceImplClass("com.yao.spu.service.core.service.BaseServiceImpl")*/
+                .setSuperServiceImplClass("com.yao.spu.service.core.service.BaseServiceImpl")*//*
+
                 .setInclude(tableNames);//修改替换成你需要的表名，多个表名传数组
 
         PackageConfig packageConfig = new PackageConfig()
@@ -70,3 +73,4 @@ public class MybatisPlusGenerator {
                 .execute();
     }
 }
+*/

@@ -1,5 +1,6 @@
 package com.gd;
 
+import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
@@ -11,6 +12,7 @@ import org.springframework.stereotype.Controller;
 
 @SpringBootApplication
 @ComponentScan("com.gd.*")
+@MapperScan("com.gd.dao.*.**")
 @EnableScheduling
 @Controller
 public class AppAplication extends SpringBootServletInitializer {
