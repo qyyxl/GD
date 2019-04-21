@@ -1,4 +1,3 @@
-/*
 package com.gd.common;
 
 import org.springframework.beans.factory.annotation.Value;
@@ -11,4 +10,3 @@ public class WebConfig {
     public String port;
 
 }
-*/

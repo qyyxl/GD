@@ -4,5 +4,3 @@ server:
     context-path: /api
   tomcat:
     max-threads: 100
-spring:
-  profiles: dev
