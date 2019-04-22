@@ -33,8 +33,7 @@ public class UserController {
     @ResponseBody
     public String getUserList() {
         List<User> users = userService.queryUserList();
-        String userList = JSONObject.toJSONString(users);
-        return userList;
+        return JSONObject.toJSONString(users);
     }
 
 }
