@@ -1,7 +1,7 @@
 package com.gd.service;
 
+import com.gd.core.BaseService;
 import com.gd.model.BtocSku;
-import com.baomidou.mybatisplus.extension.service.IService;
 
 /**
  * <p>
@@ -11,6 +11,6 @@ import com.baomidou.mybatisplus.extension.service.IService;
  * @author system
  * @since 2019-04-21
  */
-public interface BtocSkuService extends IService<BtocSku> {
+public interface BtocSkuService extends BaseService<BtocSku> {
 
 }

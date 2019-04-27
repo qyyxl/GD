@@ -1,9 +1,9 @@
 package com.gd.service.impl;
 
-import com.gd.model.BtocSku;
+import com.gd.core.BaseServiceImpl;
 import com.gd.dao.BtocSkuDao;
+import com.gd.model.BtocSku;
 import com.gd.service.BtocSkuService;
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.stereotype.Service;
 
 /**
@@ -15,6 +15,6 @@ import org.springframework.stereotype.Service;
  * @since 2019-04-21
  */
 @Service
-public class BtocSkuServiceImpl extends ServiceImpl<BtocSkuDao, BtocSku> implements BtocSkuService {
+public class BtocSkuServiceImpl extends BaseServiceImpl<BtocSkuDao, BtocSku> implements BtocSkuService {
 
 }

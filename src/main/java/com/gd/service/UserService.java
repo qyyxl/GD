@@ -1,6 +1,7 @@
 package com.gd.service;
+
+import com.gd.core.BaseService;
 import com.gd.model.User;
-import com.baomidou.mybatisplus.extension.service.IService;
 import com.gd.model.UserLove;
 
 import java.util.List;
@@ -13,7 +14,7 @@ import java.util.List;
  * @author system
  * @since 2019-04-21
  */
-public interface UserService extends IService<User> {
+public interface UserService extends BaseService<User> {
 
     List<User> queryUserList();
 

@@ -2,6 +2,8 @@ package com.gd.controller;
 
 
 import com.alibaba.fastjson.JSONObject;
+import com.alibaba.fastjson.parser.ParserConfig;
+import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.gd.dao.UserDao;
 import com.gd.model.User;
 import com.gd.service.UserService;
@@ -29,11 +31,20 @@ public class UserController {
     @Autowired
     UserService userService;
 
+
+    @Autowired
+    UserDao userDao;
+
     @RequestMapping("/getUser")
     @ResponseBody
     public String getUserList() {
-        List<User> users = userService.queryUserList();
-        return JSONObject.toJSONString(users);
+        return JSONObject.toJSONString(userDao.selectList(null));
+    }
+
+    @RequestMapping("/getUser2")
+    @ResponseBody
+    public String getUserList2() {
+        return JSONObject.toJSONString(userService.queryUserList());
     }
 
 }

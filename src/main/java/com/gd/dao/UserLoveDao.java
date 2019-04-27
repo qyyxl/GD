@@ -1,7 +1,6 @@
 package com.gd.dao;
 
 import com.gd.model.UserLove;
-import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**
  * <p>
@@ -11,6 +10,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @author system
  * @since 2019-04-21
  */
-public interface UserLoveDao extends BaseMapper<UserLove> {
+public interface UserLoveDao extends BaseDao<UserLove> {
 
 }

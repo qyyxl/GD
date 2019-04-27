@@ -1,8 +1,7 @@
 package com.gd.service.impl;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.gd.core.BaseServiceImpl;
 import com.gd.dao.UserDao;
-import com.gd.dao.UserLoveDao;
 import com.gd.model.User;
 import com.gd.model.UserLove;
 import com.gd.service.UserService;
@@ -20,13 +19,10 @@ import java.util.List;
  * @since 2019-04-21
  */
 @Service
-public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserService {
+public class UserServiceImpl extends BaseServiceImpl<UserDao, User> implements UserService {
 
     @Autowired
     UserDao userDao;
-
-    @Autowired
-    UserLoveDao userLoveDao;
 
     @Override
     public List<User> queryUserList() {
@@ -35,7 +31,7 @@ public class UserServiceImpl extends ServiceImpl<UserDao, User> implements UserS
 
     @Override
     public List<UserLove> getUserLoveList() {
-        return userLoveDao.selectList(null);
+        return null;
     }
 
     @Override
