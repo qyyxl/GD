@@ -1,7 +1,6 @@
 package com.gd.core;
 
 import com.baomidou.mybatisplus.service.impl.ServiceImpl;
-import com.gd.dao.BaseDao;
 
 /**
  * 基础service实现

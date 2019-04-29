@@ -1,24 +1,24 @@
-/*
 package com.gd.inst;
 
-import com.baomidou.mybatisplus.annotation.DbType;
+
 import com.baomidou.mybatisplus.generator.AutoGenerator;
 import com.baomidou.mybatisplus.generator.config.DataSourceConfig;
 import com.baomidou.mybatisplus.generator.config.GlobalConfig;
 import com.baomidou.mybatisplus.generator.config.PackageConfig;
 import com.baomidou.mybatisplus.generator.config.StrategyConfig;
+import com.baomidou.mybatisplus.generator.config.rules.DbType;
 import com.baomidou.mybatisplus.generator.config.rules.NamingStrategy;
 
 public class MybatisPlusGenerator {
 
     public static void main(String[] args) {
-        String packageName = "com.gd.inst";
+        String packageName = "com.gd";
         generateByTables(packageName,
-                "user_love","recommend","btoc_sku");
+                "user"/*"user_love","recommend","btoc_sku"*/);
     }
 
     public void generateCode() {
-        String packageName = "com.gd.inst";
+        String packageName = "com.gd";
         generateByTables(packageName,
                 "user");
     }
@@ -46,15 +46,15 @@ public class MybatisPlusGenerator {
         StrategyConfig strategyConfig = new StrategyConfig()
                 .setCapitalMode(true)
                 .setEntityLombokModel(false)
+                .setDbColumnUnderline(true)
                 .setEntityColumnConstant(false)
                 .entityTableFieldAnnotationEnable(true)
                 .setTablePrefix("t_")
                 .setNaming(NamingStrategy.underline_to_camel)
-              */
-/*  .setSuperEntityClass("com.yao.spu.service.core.model.BaseModel")
-                .setSuperMapperClass("com.yao.spu.service.core.dao.BaseDao")
-                .setSuperServiceClass("com.yao.spu.service.core.service.BaseService")
-                .setSuperServiceImplClass("com.yao.spu.service.core.service.BaseServiceImpl")*//*
+                .setSuperEntityClass("com.gd.core.BaseModel")
+                .setSuperMapperClass("com.gd.core.BaseDao")
+                .setSuperServiceClass("com.gd.core.BaseService")
+                .setSuperServiceImplClass("com.gd.core.BaseServiceImpl")
 
                 .setInclude(tableNames);//修改替换成你需要的表名，多个表名传数组
 
@@ -73,4 +73,3 @@ public class MybatisPlusGenerator {
                 .execute();
     }
 }
-*/
