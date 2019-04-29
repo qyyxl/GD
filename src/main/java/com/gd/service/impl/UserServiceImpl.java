@@ -1,5 +1,6 @@
 package com.gd.service.impl;
 
+import com.gd.model.ProductVo;
 import com.gd.model.User;
 import com.gd.dao.UserDao;
 import com.gd.model.UserLove;

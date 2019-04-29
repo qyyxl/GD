@@ -14,7 +14,7 @@ public class MybatisPlusGenerator {
     public static void main(String[] args) {
         String packageName = "com.gd";
         generateByTables(packageName,
-                "user"/*"user_love","recommend","btoc_sku"*/);
+                /*"btoc_area_item","btoc_item","btoc_sku"*/"user_love","recommend");
     }
 
     public void generateCode() {
@@ -30,7 +30,7 @@ public class MybatisPlusGenerator {
                 .setBaseResultMap(true)
                 .setBaseColumnList(true)
                 .setAuthor("system")
-                .setOutputDir("d:\\codeGen")
+                .setOutputDir("e:\\project\\GD\\src\\main\\java\\")
                 .setFileOverride(true)
                 .setServiceName("%sService")
                 .setMapperName("%sDao")

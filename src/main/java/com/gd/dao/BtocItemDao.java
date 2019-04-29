@@ -1,16 +1,16 @@
 package com.gd.dao;
 
-import com.gd.model.Recommend;
+import com.gd.model.BtocItem;
 import com.gd.core.BaseDao;
 
 /**
  * <p>
- * 推荐表 Mapper 接口
+ *  Mapper 接口
  * </p>
  *
  * @author system
  * @since 2019-04-29
  */
-public interface RecommendDao extends BaseDao<Recommend> {
+public interface BtocItemDao extends BaseDao<BtocItem> {
 
 }

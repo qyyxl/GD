@@ -33,6 +33,9 @@ public class BtocSku extends BaseModel {
     private String definitionname;
     @TableField("brandid")
     private Integer brandid;
+    /**
+     * 店铺名称
+     */
     @TableField("brandname")
     private String brandname;
     @TableField("catalogid")

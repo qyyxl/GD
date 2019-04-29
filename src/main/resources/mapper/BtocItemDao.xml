@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gd.dao.BtocItemDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gd.model.BtocItem">
+        <id column="id" property="id" />
+        <result column="productNo" property="productNo" />
+        <result column="productName" property="productName" />
+        <result column="otherName" property="otherName" />
+        <result column="byName" property="byName" />
+        <result column="catalogId" property="catalogId" />
+        <result column="catalogName" property="catalogName" />
+        <result column="brandId" property="brandId" />
+        <result column="brandName" property="brandName" />
+        <result column="definitionId" property="definitionId" />
+        <result column="definitionName" property="definitionName" />
+        <result column="mainimg1" property="mainimg1" />
+        <result column="mainimg2" property="mainimg2" />
+        <result column="mainimg3" property="mainimg3" />
+        <result column="mainimg4" property="mainimg4" />
+        <result column="mainimg5" property="mainimg5" />
+        <result column="mainimg6" property="mainimg6" />
+        <result column="status" property="status" />
+        <result column="specialStatus" property="specialStatus" />
+        <result column="attributes" property="attributes" />
+        <result column="materialtype" property="materialtype" />
+        <result column="venderId" property="venderId" />
+        <result column="sellType" property="sellType" />
+        <result column="commission" property="commission" />
+        <result column="salesCount" property="salesCount" />
+        <result column="userGradecount" property="userGradecount" />
+        <result column="userGrade" property="userGrade" />
+        <result column="subtotalScore" property="subtotalScore" />
+        <result column="priority" property="priority" />
+        <result column="taxrate" property="taxrate" />
+        <result column="invoice" property="invoice" />
+        <result column="inputer" property="inputer" />
+        <result column="inputDate" property="inputDate" />
+        <result column="updater" property="updater" />
+        <result column="updateTime" property="updateTime" />
+        <result column="qualityStatus" property="qualityStatus" />
+        <result column="skuId" property="skuId" />
+        <result column="saleSchemeId" property="saleSchemeId" />
+        <result column="tags" property="tags" />
+        <result column="storeSchemeId" property="storeSchemeId" />
+        <result column="exChangedDay" property="exChangedDay" />
+        <result column="remindType" property="remindType" />
+        <result column="specialAttributes" property="specialAttributes" />
+        <result column="drugStatus" property="drugStatus" />
+        <result column="frightTemplateId" property="frightTemplateId" />
+        <result column="itemGroupId" property="itemGroupId" />
+        <result column="supplierProductCode" property="supplierProductCode" />
+        <result column="isHaiTao" property="isHaiTao" />
+        <result column="haiTaoTransport" property="haiTaoTransport" />
+        <result column="haiTaoCountry" property="haiTaoCountry" />
+        <result column="isVenderPayTax" property="isVenderPayTax" />
+        <result column="outerSkuId" property="outerSkuId" />
+        <result column="outerItemId" property="outerItemId" />
+        <result column="outerItemNo" property="outerItemNo" />
+        <result column="haoCommentCount" property="haoCommentCount" />
+        <result column="questionCount" property="questionCount" />
+        <result column="sellPoint" property="sellPoint" />
+        <result column="isHealthy" property="isHealthy" />
+        <result column="isBtob" property="isBtob" />
+        <result column="syncItemStatus" property="syncItemStatus" />
+        <result column="syncTime" property="syncTime" />
+        <result column="drugLevel" property="drugLevel" />
+        <result column="remark" property="remark" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS id, productNo AS productNo, productName AS productName, otherName AS otherName, byName AS byName, catalogId AS catalogId, catalogName AS catalogName, brandId AS brandId, brandName AS brandName, definitionId AS definitionId, definitionName AS definitionName, mainimg1 AS mainimg1, mainimg2 AS mainimg2, mainimg3 AS mainimg3, mainimg4 AS mainimg4, mainimg5 AS mainimg5, mainimg6 AS mainimg6, status AS status, specialStatus AS specialStatus, attributes AS attributes, materialtype AS materialtype, venderId AS venderId, sellType AS sellType, commission AS commission, salesCount AS salesCount, userGradecount AS userGradecount, userGrade AS userGrade, subtotalScore AS subtotalScore, priority AS priority, taxrate AS taxrate, invoice AS invoice, inputer AS inputer, inputDate AS inputDate, updater AS updater, updateTime AS updateTime, qualityStatus AS qualityStatus, skuId AS skuId, saleSchemeId AS saleSchemeId, tags AS tags, storeSchemeId AS storeSchemeId, exChangedDay AS exChangedDay, remindType AS remindType, specialAttributes AS specialAttributes, drugStatus AS drugStatus, frightTemplateId AS frightTemplateId, itemGroupId AS itemGroupId, supplierProductCode AS supplierProductCode, isHaiTao AS isHaiTao, haiTaoTransport AS haiTaoTransport, haiTaoCountry AS haiTaoCountry, isVenderPayTax AS isVenderPayTax, outerSkuId AS outerSkuId, outerItemId AS outerItemId, outerItemNo AS outerItemNo, haoCommentCount AS haoCommentCount, questionCount AS questionCount, sellPoint AS sellPoint, isHealthy AS isHealthy, isBtob AS isBtob, syncItemStatus AS syncItemStatus, syncTime AS syncTime, drugLevel AS drugLevel, remark AS remark
+    </sql>
+
+</mapper>
