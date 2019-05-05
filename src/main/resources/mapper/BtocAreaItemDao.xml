@@ -39,6 +39,12 @@
         <result column="itemId" property="itemId"/>
         <result column="productNo" property="productNo"/>
         <result column="productName" property="productName"/>
+        <result column="mainimg1" property="mainimg1"/>
+        <result column="mainimg2" property="mainimg2"/>
+        <result column="mainimg3" property="mainimg3"/>
+        <result column="mainimg4" property="mainimg4"/>
+        <result column="mainimg5" property="mainimg5"/>
+        <result column="mainimg6" property="mainimg6"/>
         <result column="originalPrice" property="originalPrice"/>
         <result column="skuId" property="skuId"/>
         <result column="norms" property="norms"/>
@@ -50,7 +56,7 @@
     </sql>
 
     <sql id="queryProductVoList">
-       i.id AS itemId, i.productNo AS productNo , i.productName AS productName,a.originalPrice AS originalPrice ,i.skuId AS skuId,s.norms AS norms
+       i.id AS itemId, i.productNo AS productNo , i.productName AS productName,i.mainimg1 As mainimg1,i.mainimg2 As mainimg2,i.mainimg3 As mainimg3,i.mainimg4 As mainimg4,i.mainimg5 As mainimg5,i.mainimg6 As mainimg6,a.originalPrice AS originalPrice ,i.skuId AS skuId,s.norms AS norms
     </sql>
 
     <select id="queryProductForVo" resultMap="ProductVo" parameterType="java.lang.String">
@@ -62,8 +68,8 @@
         <if test="productName != null  ">
             and  i.productName like CONCAT('%',upper(trim(#{productName})),'%')
         </if>
-       and  i.status = 1 and i.sellType not in (9,10) and i.materialtype = 'ZSP'
         order by i.updateTime desc
+        limit 4
     </select>
 
 </mapper>

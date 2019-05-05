@@ -21,6 +21,30 @@ public class ProductVo extends BaseModel {
      */
     private String productName;
     /**
+     * 图片最大尺寸
+     */
+    private String mainimg1;
+    /**
+     * 图片330*330
+     */
+    private String mainimg2;
+    /**
+     * 图片120*120
+     */
+    private String mainimg3;
+    /**
+     * 图片170*170
+     */
+    private String mainimg4;
+    /**
+     *  图片100*100
+     */
+    private String mainimg5;
+    /**
+     *  图片50*50
+     */
+    private String mainimg6;
+    /**
      * 销售价格
      */
     private Double originalPrice;

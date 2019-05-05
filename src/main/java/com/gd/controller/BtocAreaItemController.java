@@ -27,7 +27,7 @@ public class BtocAreaItemController {
     @RequestMapping("/queryProductForVo")
     @ResponseBody
     public String queryProductForVo() {
-        return JSONObject.toJSONString(btocAreaItemService.queryProductForVo("999感冒灵"));
+        return JSONObject.toJSONString(btocAreaItemService.queryProductForVo("感冒灵"));
     }
 
 }
