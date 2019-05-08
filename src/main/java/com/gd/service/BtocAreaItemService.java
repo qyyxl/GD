@@ -8,7 +8,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 服务类
  * </p>
  *
  * @author system
@@ -16,6 +16,8 @@ import java.util.List;
  */
 public interface BtocAreaItemService extends BaseService<BtocAreaItem> {
 
-    List<ProductVo> queryProductForVo (String productName);
+    List<ProductVo> queryProductForVo(String productName, Integer limit);
+
+    public List<ProductVo> queryProductForDetail(Integer id);
 
 }

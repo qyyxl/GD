@@ -69,7 +69,17 @@
             and  i.productName like CONCAT('%',upper(trim(#{productName})),'%')
         </if>
         order by i.updateTime desc
-        limit 4
+        limit #{limit}
+    </select>
+    <select id="queryProductForDetail" resultMap="ProductVo" parameterType="java.lang.Integer">
+        select <include refid="queryProductVoList" />
+        from btoc_item i
+        inner join btoc_area_item a on i.id = a.itemId
+        left join btoc_sku s on i.skuId = s.id
+        where 1=1
+        <if test="id != null">
+            and  i.id =#{id}
+        </if>
     </select>
 
 </mapper>

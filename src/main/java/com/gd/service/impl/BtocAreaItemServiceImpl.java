@@ -12,7 +12,7 @@ import java.util.List;
 
 /**
  * <p>
- *  服务实现类
+ * 服务实现类
  * </p>
  *
  * @author system
@@ -25,7 +25,12 @@ public class BtocAreaItemServiceImpl extends BaseServiceImpl<BtocAreaItemDao, Bt
     BtocAreaItemDao btocAreaItemDao;
 
     @Override
-    public List<ProductVo> queryProductForVo(String productName) {
-        return btocAreaItemDao.queryProductForVo(productName);
+    public List<ProductVo> queryProductForVo(String productName, Integer limit) {
+        return btocAreaItemDao.queryProductForVo(productName, limit);
+    }
+
+    @Override
+    public List<ProductVo> queryProductForDetail(Integer id) {
+        return btocAreaItemDao.queryProductForDetail(id);
     }
 }

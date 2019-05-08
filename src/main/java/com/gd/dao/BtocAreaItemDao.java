@@ -9,7 +9,7 @@ import java.util.List;
 
 /**
  * <p>
- *  Mapper 接口
+ * Mapper 接口
  * </p>
  *
  * @author system
@@ -17,6 +17,9 @@ import java.util.List;
  */
 public interface BtocAreaItemDao extends BaseDao<BtocAreaItem> {
 
-    public List<ProductVo> queryProductForVo(@Param("productName") String productName);
+    public List<ProductVo> queryProductForVo(@Param("productName") String productName, @Param("limit") Integer limit);
+
+    public List<ProductVo> queryProductForDetail(@Param("id") Integer id);
+
 
 }
