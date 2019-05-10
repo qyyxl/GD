@@ -4,6 +4,7 @@ import com.gd.model.UserLove;
 import com.gd.dao.UserLoveDao;
 import com.gd.service.UserLoveService;
 import com.gd.core.BaseServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 /**
@@ -16,5 +17,20 @@ import org.springframework.stereotype.Service;
  */
 @Service
 public class UserLoveServiceImpl extends BaseServiceImpl<UserLoveDao, UserLove> implements UserLoveService {
+
+    @Autowired
+    UserLoveDao userLoveDao;
+
+    @Override
+    public UserLove queryUserLove(UserLove userLove) {
+        return userLoveDao.selectOne(userLove);
+    }
+
+    @Override
+    public boolean insertUserLove(UserLove userLove) {
+        Integer re = userLoveDao.insert(userLove);
+        return re > 0 ? true : false;
+    }
+
 
 }

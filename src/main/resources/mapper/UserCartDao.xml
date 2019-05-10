@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gd.dao.UserCartDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gd.model.UserCart">
+        <id column="id" property="id" />
+        <result column="itemId" property="itemId" />
+        <result column="productName" property="productName" />
+        <result column="originalPrice" property="originalPrice" />
+        <result column="orderCount" property="orderCount" />
+        <result column="orderMoney" property="orderMoney" />
+        <result column="userId" property="userId" />
+        <result column="create_time" property="createTime" />
+        <result column="update_time" property="updateTime" />
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS id, itemId AS itemId, productName AS productName, originalPrice AS originalPrice, orderCount AS orderCount, orderMoney AS orderMoney, userId AS userId, create_time AS createTime, update_time AS updateTime
+    </sql>
+
+    <select id="queryUserCartByUserId" resultMap="BaseResultMap" parameterType="java.lang.Integer">
+        select *
+        from user_cart ca
+        where 1=1
+        <if test="userId != null">
+            and  ca.userId =#{userId}
+        </if>
+        order by ca.update_time desc
+    </select>
+
+</mapper>

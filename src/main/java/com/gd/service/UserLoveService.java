@@ -13,4 +13,8 @@ import com.gd.core.BaseService;
  */
 public interface UserLoveService extends BaseService<UserLove> {
 
+    UserLove queryUserLove(UserLove userLove);
+
+    boolean insertUserLove(UserLove userLove);
+
 }
