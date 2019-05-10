@@ -4,7 +4,6 @@ package com.gd.controller;
 import com.alibaba.fastjson.JSONObject;
 import com.gd.model.ProductVo;
 import com.gd.service.BtocAreaItemService;
-import org.apache.commons.lang.math.NumberUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,6 +32,10 @@ public class BtocAreaItemController {
     @Autowired
     BtocAreaItemService btocAreaItemService;
 
+    /**
+     * 用于首页品牌专题展示
+     * @return
+     */
     @RequestMapping("/queryProductForBrandsVo")
     @ResponseBody
     public String queryProductForBrandsVo() {
@@ -45,15 +48,22 @@ public class BtocAreaItemController {
             logger.info("productVos::::{}", productVos);
             jsonObject.put("success", true);
             jsonObject.put("data", productVos);
-            jsonObject.put("msg", "成功！！！！");
+            jsonObject.put("msg", "首页品牌专题展示成功！！！！");
         } catch (Exception e) {
-            logger.error("失败：：：：{}", e);
+            logger.error("首页品牌专题展示失败：：：：{}", e);
             jsonObject.put("success", false);
-            jsonObject.put("msg", "失败！！！！");
+            jsonObject.put("msg", "首页品牌专题展示失败！！！！");
         }
         return jsonObject.toJSONString();
     }
 
+    /**
+     * 用于搜索查询药品
+     * @param productName
+     * @param request
+     * @param response
+     * @return
+     */
     @ResponseBody
     @RequestMapping(path = "/queryProductForSearchVo")
     public String queryProductForSearchVo(@RequestParam(value = "productName") String productName, HttpServletRequest request, HttpServletResponse response) {
@@ -65,15 +75,22 @@ public class BtocAreaItemController {
             logger.info("productVos::::{}", productVos);
             jsonObject.put("success", true);
             jsonObject.put("data", productVos);
-            jsonObject.put("msg", "成功！！！！");
+            jsonObject.put("msg", "搜索查询药品成功！！！！");
         } catch (Exception e) {
-            logger.error("失败：：：：{}", e);
+            logger.error("搜索查询药品异常：：：：{}", e);
             jsonObject.put("success", false);
-            jsonObject.put("msg", "失败！！！！");
+            jsonObject.put("msg", "搜索查询药品异常！！！！");
         }
         return jsonObject.toJSONString();
     }
 
+    /**
+     * 用于商品详情页初始化
+     * @param id
+     * @param request
+     * @param response
+     * @return
+     */
     @ResponseBody
     @RequestMapping("/queryProductForDetail")
     public String queryProductForDetail(@RequestParam(value = "id") Integer id, HttpServletRequest request, HttpServletResponse response) {

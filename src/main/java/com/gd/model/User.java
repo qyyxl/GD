@@ -15,7 +15,7 @@ import org.springframework.format.annotation.DateTimeFormat;
  * </p>
  *
  * @author system
- * @since 2019-04-29
+ * @since 2019-05-08
  */
 
 @Data
@@ -39,6 +39,21 @@ public class User extends BaseModel {
     @TableField("password")
     private String password;
     /**
+     * 性别
+     */
+    @TableField("gender")
+    private Integer gender;
+    /**
+     * 邮箱
+     */
+    @TableField("email")
+    private String email;
+    /**
+     * 手机号
+     */
+    @TableField("tell")
+    private String tell;
+    /**
      * 创建时间
      */
     @TableField("create_time")
@@ -57,6 +72,9 @@ public class User extends BaseModel {
         ", id=" + id +
         ", username=" + username +
         ", password=" + password +
+        ", gender=" + gender +
+        ", email=" + email +
+        ", tell=" + tell +
         ", createTime=" + createTime +
         ", updateTime=" + updateTime +
         "}";

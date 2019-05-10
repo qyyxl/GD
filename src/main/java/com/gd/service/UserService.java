@@ -12,7 +12,7 @@ import java.util.List;
  * </p>
  *
  * @author system
- * @since 2019-04-29
+ * @since 2019-05-08
  */
 public interface UserService extends BaseService<User> {
 
@@ -20,8 +20,11 @@ public interface UserService extends BaseService<User> {
 
     List<UserLove> getUserLoveList();
 
-    void insertUserGuessL();
+    boolean checkUserForRegistered(String username, String password);
 
-    void updateUserGuessL();
+    User queryUserByUserName(User user);
 
+    boolean insertUserGuessL(User user);
+
+    boolean updateUserGuessL(User user);
 }

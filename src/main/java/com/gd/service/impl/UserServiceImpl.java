@@ -1,6 +1,6 @@
 package com.gd.service.impl;
 
-import com.gd.model.ProductVo;
+import com.baomidou.mybatisplus.mapper.EntityWrapper;
 import com.gd.model.User;
 import com.gd.dao.UserDao;
 import com.gd.model.UserLove;
@@ -17,7 +17,7 @@ import java.util.List;
  * </p>
  *
  * @author system
- * @since 2019-04-29
+ * @since 2019-05-08
  */
 @Service
 public class UserServiceImpl extends BaseServiceImpl<UserDao, User> implements UserService {
@@ -36,12 +36,25 @@ public class UserServiceImpl extends BaseServiceImpl<UserDao, User> implements U
     }
 
     @Override
-    public void insertUserGuessL() {
-
+    public boolean checkUserForRegistered(String username, String password) {
+        int count = userDao.selectCount(new EntityWrapper<User>().eq("username", username).eq("password", password));
+        return count > 0 ? true : false;
     }
 
     @Override
-    public void updateUserGuessL() {
+    public User queryUserByUserName(User user) {
+        return userDao.selectOne(user);
+    }
 
+    @Override
+    public boolean insertUserGuessL(User user) {
+        int re = userDao.insert(user);
+        return re > 0 ? true : false;
+    }
+
+    @Override
+    public boolean updateUserGuessL(User user) {
+        int re = userDao.update(user, new EntityWrapper<User>().eq("id", user.getId()));
+        return re > 0 ? true : false;
     }
 }
