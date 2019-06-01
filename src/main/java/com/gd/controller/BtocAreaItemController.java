@@ -70,7 +70,7 @@ public class BtocAreaItemController {
         JSONObject jsonObject = new JSONObject();
         try {
             logger.info("productName::::{}", productName);
-            Integer limit = 8;
+            Integer limit = 100;
             List<ProductVo> productVos = btocAreaItemService.queryProductForVo(productName, limit);
             logger.info("productVos::::{}", productVos);
             jsonObject.put("success", true);

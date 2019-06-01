@@ -14,7 +14,7 @@ public class MybatisPlusGenerator {
     public static void main(String[] args) {
         String packageName = "com.gd";
         generateByTables(packageName,
-                /*"btoc_area_item","btoc_item","btoc_sku"*/"user_love","recommend");
+                "btoc_area_item","btoc_item","btoc_sku","user_love","recommend","user","user_cart","user_favorites","user_foot","user_order");
     }
 
     public void generateCode() {

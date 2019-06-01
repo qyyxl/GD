@@ -2,9 +2,13 @@ package com.gd.service.impl;
 
 import com.gd.model.Recommend;
 import com.gd.dao.RecommendDao;
+import com.gd.model.RecommendVo;
 import com.gd.service.RecommendService;
 import com.gd.core.BaseServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 /**
  * <p>
@@ -17,4 +21,11 @@ import org.springframework.stereotype.Service;
 @Service
 public class RecommendServiceImpl extends BaseServiceImpl<RecommendDao, Recommend> implements RecommendService {
 
+    @Autowired
+    RecommendDao recommendDao;
+
+    @Override
+    public List<RecommendVo> queryRecommendVoByUserId(Integer userId) {
+        return recommendDao.queryRecommendVoByUserId(userId);
+    }
 }

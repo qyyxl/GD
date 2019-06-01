@@ -40,7 +40,7 @@ public class UserFootController {
 
 
     /**
-     * 用于收藏夹初始化
+     * 用于我的足迹初始化
      *
      * @param username
      * @return
