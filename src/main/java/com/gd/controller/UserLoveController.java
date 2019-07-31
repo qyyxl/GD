@@ -7,11 +7,11 @@ import org.springframework.stereotype.Controller;
 
 /**
  * <p>
- *  前端控制器
+ * 推荐关系表 前端控制器
  * </p>
  *
  * @author system
- * @since 2019-04-21
+ * @since 2019-04-30
  */
 @Controller
 @RequestMapping("/userLove")

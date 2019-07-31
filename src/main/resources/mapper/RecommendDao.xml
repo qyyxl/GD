@@ -6,14 +6,40 @@
     <resultMap id="BaseResultMap" type="com.gd.model.Recommend">
         <id column="id" property="id" />
         <result column="user_id" property="userId" />
-        <result column="sku_no" property="skuNo" />
+        <result column="item_id" property="itemId" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, user_id, sku_no, create_time, update_time
+        id AS id, user_id AS userId, item_id AS itemId, create_time AS createTime, update_time AS updateTime
     </sql>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="RecommendVo" type="com.gd.model.RecommendVo">
+        <result column="id" property="id"/>
+        <result column="itemId" property="itemId"/>
+        <result column="userId" property="userId"/>
+        <result column="productName" property="productName"/>
+        <result column="mainimg1" property="mainimg1"/>
+        <result column="originalPrice" property="originalPrice"/>
+    </resultMap>
+
+    <sql id="queryRecommendVoList">
+       r.id AS id,r.user_id AS userId,r.item_id AS itemId , i.productName AS productName,i.mainimg1 As mainimg1,a.originalPrice AS originalPrice
+    </sql>
+
+    <select id="queryRecommendVoByUserId" resultMap="RecommendVo" parameterType="java.lang.Integer">
+        select <include refid="queryRecommendVoList" />
+        from recommend r
+        inner join btoc_item i on i.id = r.item_id
+        inner join btoc_area_item a on a.itemId = r.item_id
+        where 1=1
+        <if test="userId != null">
+            and  r.user_id =#{userId}
+        </if>
+        order by r.update_time desc
+    </select>
 
 </mapper>

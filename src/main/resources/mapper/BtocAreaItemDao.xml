@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.gd.dao.BtocAreaItemDao">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="BaseResultMap" type="com.gd.model.BtocAreaItem">
+        <id column="id" property="id" />
+        <result column="itemId" property="itemId" />
+        <result column="recommendPrice" property="recommendPrice" />
+        <result column="originalPrice" property="originalPrice" />
+        <result column="bid" property="bid" />
+        <result column="avgPrice" property="avgPrice" />
+        <result column="avgPriceWithoutTax" property="avgPriceWithoutTax" />
+        <result column="status" property="status" />
+        <result column="saleArea" property="saleArea" />
+        <result column="saleType" property="saleType" />
+        <result column="price" property="price" />
+        <result column="gift" property="gift" />
+        <result column="interceptCount" property="interceptCount" />
+        <result column="limitCount" property="limitCount" />
+        <result column="showPic" property="showPic" />
+        <result column="littlePic" property="littlePic" />
+        <result column="inputer" property="inputer" />
+        <result column="inputDate" property="inputDate" />
+        <result column="updater" property="updater" />
+        <result column="updateTime" property="updateTime" />
+        <result column="mobilePrice" property="mobilePrice" />
+        <result column="mobilePriceStatus" property="mobilePriceStatus" />
+        <result column="xPrice" property="xPrice" />
+        <result column="giftLinkTxt" property="giftLinkTxt" />
+        <result column="pcGitLink" property="pcGitLink" />
+        <result column="h5GitLink" property="h5GitLink" />
+        <result column="syncItemStatus" property="syncItemStatus" />
+        <result column="syncTime" property="syncTime" />
+    </resultMap>
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="ProductVo" type="com.gd.model.ProductVo">
+        <result column="itemId" property="itemId"/>
+        <result column="productNo" property="productNo"/>
+        <result column="productName" property="productName"/>
+        <result column="mainimg1" property="mainimg1"/>
+        <result column="mainimg2" property="mainimg2"/>
+        <result column="mainimg3" property="mainimg3"/>
+        <result column="mainimg4" property="mainimg4"/>
+        <result column="mainimg5" property="mainimg5"/>
+        <result column="mainimg6" property="mainimg6"/>
+        <result column="originalPrice" property="originalPrice"/>
+        <result column="skuId" property="skuId"/>
+        <result column="norms" property="norms"/>
+    </resultMap>
+
+    <!-- 通用查询结果列 -->
+    <sql id="Base_Column_List">
+        id AS id, itemId AS itemId, recommendPrice AS recommendPrice, originalPrice AS originalPrice, bid AS bid, avgPrice AS avgPrice, avgPriceWithoutTax AS avgPriceWithoutTax, status AS status, saleArea AS saleArea, saleType AS saleType, price AS price, gift AS gift, interceptCount AS interceptCount, limitCount AS limitCount, showPic AS showPic, littlePic AS littlePic, inputer AS inputer, inputDate AS inputDate, updater AS updater, updateTime AS updateTime, mobilePrice AS mobilePrice, mobilePriceStatus AS mobilePriceStatus, xPrice AS xPrice, giftLinkTxt AS giftLinkTxt, pcGitLink AS pcGitLink, h5GitLink AS h5GitLink, syncItemStatus AS syncItemStatus, syncTime AS syncTime
+    </sql>
+
+    <sql id="queryProductVoList">
+       i.id AS itemId, i.productNo AS productNo , i.productName AS productName,i.mainimg1 As mainimg1,i.mainimg2 As mainimg2,i.mainimg3 As mainimg3,i.mainimg4 As mainimg4,i.mainimg5 As mainimg5,i.mainimg6 As mainimg6,a.originalPrice AS originalPrice ,i.skuId AS skuId,s.norms AS norms
+    </sql>
+
+    <select id="queryProductForVo" resultMap="ProductVo" parameterType="java.lang.String">
+        select <include refid="queryProductVoList" />
+        from btoc_item i
+        inner join btoc_area_item a on i.id = a.itemId
+        left join btoc_sku s on i.skuId = s.id
+        where 1=1
+        <if test="productName != null  ">
+            and  i.productName like CONCAT('%',upper(trim(#{productName})),'%')
+        </if>
+        order by i.updateTime desc
+        limit #{limit}
+    </select>
+    <select id="queryProductForDetail" resultMap="ProductVo" parameterType="java.lang.Integer">
+        select <include refid="queryProductVoList" />
+        from btoc_item i
+        inner join btoc_area_item a on i.id = a.itemId
+        left join btoc_sku s on i.skuId = s.id
+        where 1=1
+        <if test="id != null">
+            and  i.id =#{id}
+        </if>
+    </select>
+
+</mapper>

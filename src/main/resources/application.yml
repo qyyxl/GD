@@ -14,7 +14,8 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   application:
     name: compute-service1
-  clout:
+
+  cloud:
     config:
       discovery:
         serviceId: compute-server

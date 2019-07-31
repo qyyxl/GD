@@ -1,6 +1,7 @@
 package com.gd.dao;
 
 import com.gd.model.BtocSku;
+import com.gd.core.BaseDao;
 
 /**
  * <p>
@@ -8,8 +9,8 @@ import com.gd.model.BtocSku;
  * </p>
  *
  * @author system
- * @since 2019-04-21
+ * @since 2019-04-29
  */
-public interface BtocSkuDao extends BaseDao<BtocSku>  {
+public interface BtocSkuDao extends BaseDao<BtocSku> {
 
 }

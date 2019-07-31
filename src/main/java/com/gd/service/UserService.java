@@ -1,18 +1,18 @@
 package com.gd.service;
 
-import com.gd.core.BaseService;
 import com.gd.model.User;
+import com.gd.core.BaseService;
 import com.gd.model.UserLove;
 
 import java.util.List;
 
 /**
  * <p>
- *  服务类
+ * 用户表 服务类
  * </p>
  *
  * @author system
- * @since 2019-04-21
+ * @since 2019-05-08
  */
 public interface UserService extends BaseService<User> {
 
@@ -20,7 +20,11 @@ public interface UserService extends BaseService<User> {
 
     List<UserLove> getUserLoveList();
 
-    void insertUserGuessL();
+    boolean checkUserForRegistered(String username, String password);
 
-    void updateUserGuessL();
+    User queryUserByUserName(User user);
+
+    boolean insertUserGuessL(User user);
+
+    boolean updateUserGuessL(User user);
 }

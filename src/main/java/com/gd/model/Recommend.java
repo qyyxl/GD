@@ -1,45 +1,58 @@
 package com.gd.model;
 
-
-import com.baomidou.mybatisplus.annotations.TableId;
 import com.baomidou.mybatisplus.enums.IdType;
+import java.util.Date;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.baomidou.mybatisplus.annotations.TableField;
+import com.baomidou.mybatisplus.annotations.TableId;
+import com.gd.core.BaseModel;
 import lombok.Data;
-
-import java.time.LocalDateTime;
-import java.io.Serializable;
 
 /**
  * <p>
- * 
+ * 推荐表
  * </p>
  *
  * @author system
- * @since 2019-04-21
+ * @since 2019-04-30
  */
 @Data
-public class Recommend implements Serializable {
+public class Recommend extends BaseModel {
 
     private static final long serialVersionUID = 1L;
 
+    /**
+     * ID
+     */
     @TableId(value = "id", type = IdType.AUTO)
     private Integer id;
-
+    /**
+     * 用户ID
+     */
+    @TableField("user_id")
     private Integer userId;
-
-    private String skuNo;
-
-    private LocalDateTime createTime;
-
-    private LocalDateTime updateTime;
-
-
+    /**
+     * 商品ID
+     */
+    @TableField("item_id")
+    private Integer itemId;
+    /**
+     * 创建时间
+     */
+    @TableField("create_time")
+    private Date createTime;
+    /**
+     * 更新时间
+     */
+    @TableField("update_time")
+    private Date updateTime;
 
     @Override
     public String toString() {
         return "Recommend{" +
-        "id=" + id +
+        ", id=" + id +
         ", userId=" + userId +
-        ", skuNo=" + skuNo +
+        ", itemId=" + itemId +
         ", createTime=" + createTime +
         ", updateTime=" + updateTime +
         "}";

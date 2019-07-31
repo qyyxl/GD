@@ -6,14 +6,15 @@
     <resultMap id="BaseResultMap" type="com.gd.model.UserLove">
         <id column="id" property="id" />
         <result column="user_id" property="userId" />
-        <result column="sku_no" property="skuNo" />
+        <result column="item_id" property="itemId" />
+        <result column="source" property="source" />
         <result column="create_time" property="createTime" />
         <result column="update_time" property="updateTime" />
     </resultMap>
 
     <!-- 通用查询结果列 -->
     <sql id="Base_Column_List">
-        id, user_id, sku_no, create_time, update_time
+        id AS id, user_id AS userId, item_id AS itemId, source AS source, create_time AS createTime, update_time AS updateTime
     </sql>
 
 </mapper>

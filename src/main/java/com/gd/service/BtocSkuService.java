@@ -1,7 +1,7 @@
 package com.gd.service;
 
-import com.gd.core.BaseService;
 import com.gd.model.BtocSku;
+import com.gd.core.BaseService;
 
 /**
  * <p>
@@ -9,7 +9,7 @@ import com.gd.model.BtocSku;
  * </p>
  *
  * @author system
- * @since 2019-04-21
+ * @since 2019-04-29
  */
 public interface BtocSkuService extends BaseService<BtocSku> {
 
